@@ -4,6 +4,7 @@ import { VscFilePdf } from "react-icons/vsc";
 import { GiRotaryPhone } from "react-icons/gi";
 import { MdAlternateEmail } from "react-icons/md";
 import { useTheme } from "next-themes";
+import Image from "next/image";
 
 const Sidebar = () => {
   const { theme, setTheme } = useTheme();
@@ -13,10 +14,17 @@ const Sidebar = () => {
 
   return (
     <div>
-      <img
+      {/* <img
         className="rounded-full w-32 h-32 mx-auto shadow-green-600 shadow-md"
         src="https://cdn.pixabay.com/photo/2018/01/21/14/16/woman-3096664_960_720.jpg"
         alt="My avatar"
+      /> */}
+      <Image
+        className="rounded-full mx-auto shadow-green-600 shadow-md"
+        src="https://cdn.pixabay.com/photo/2018/01/21/14/16/woman-3096664_960_720.jpg"
+        alt="My avatar"
+        width="128px"
+        height="128px"
       />
       <h3 className="my-4 text-3xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-green-500 tracking-wider font-kaushan">
         Jane Doe

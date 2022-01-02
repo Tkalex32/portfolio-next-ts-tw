@@ -1,4 +1,3 @@
-import { FunctionComponent } from "react";
 import { Category } from "../types";
 
 interface NavbarProps {
@@ -18,7 +17,7 @@ export const NavItem: React.FC<NavitemProps> = ({
   return (
     <li
       className={`cursor-pointer hover:text-green-500 capitalize ${
-        active === value ? " text-green-500" : ""
+        active === value ? "text-green-500" : ""
       }`}
       onClick={() => handleFilterCategory(value)}
     >
