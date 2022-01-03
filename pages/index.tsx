@@ -1,35 +1,46 @@
 //import { GetServerSidePropsContext, GetStaticPropsContext } from "next";
+import { motion } from "framer-motion";
+import { fadeInUp, routeFade, stagger } from "../animations";
 import ServiceCard from "../components/ServiceCard";
 import { services } from "../data";
 
 const index: React.FC = () => {
   //console.log("Client", services);
   return (
-    <div className="flex flex-col px-6 pt-1 ">
+    <motion.div
+      variants={routeFade}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+      className="flex flex-col px-6 pt-1 "
+    >
       <h5 className="my-3 font-medium dark:text-slate-400">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam
         veritatis quos consequatur quaerat, dolore provident, voluptatibus dicta
         tenetur molestias ipsum error voluptas exercitationem commodi sapiente.
       </h5>
-      <div
-        className="p-4 mt-5 bg-gray-200 dark:bg-gray-800 rounded-b-2xl"
-        style={{ marginLeft: "-1.5rem", marginRight: "-1.5rem" }}
-      >
-        <h6 className="my-3 text-xl font-bold tracking-wide dark:text-slate-400">
+      <div className="p-4 mt-5 -mx-6 bg-gray-200 dark:bg-gray-800 rounded-b-2xl">
+        <h4 className="my-3 text-xl font-bold tracking-wide dark:text-slate-400">
           What I Offer
-        </h6>
-        <div className="grid lg:grid-cols-2 gap-6">
+        </h4>
+        <motion.div
+          variants={stagger}
+          initial="initial"
+          animate="animate"
+          className="grid lg:grid-cols-2 gap-6"
+        >
           {services.map((service) => (
-            <div
+            <motion.div
+              variants={fadeInUp}
               key={service.title}
-              className="lg:col-span-1 bg-white rounded-lg"
+              className="lg:col-span-1 bg-white dark:bg-gray-800 rounded-lg"
             >
               <ServiceCard service={service} />
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

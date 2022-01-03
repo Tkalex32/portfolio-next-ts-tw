@@ -51,10 +51,7 @@ const Sidebar = () => {
         </a>
       </div>
       <div>
-        <div
-          className="py-4 my-5 bg-gray-200 dark:bg-gray-800 dark:text-slate-400"
-          style={{ marginLeft: "-1rem", marginRight: "-1rem" }}
-        >
+        <div className="py-4 my-5 -mx-4 bg-gray-200 dark:bg-gray-800 dark:text-slate-400">
           <div className="flex justify-center gap-1 items-center">
             <ImLocation className="w-4 h-4 text-green-500" />
             <span>New York, US</span>
@@ -73,7 +70,7 @@ const Sidebar = () => {
         </button>
         <button
           onClick={changeTheme}
-          className="w-8/12 text-white m-2 px-5 py-2 rounded-full bg-gradient-to-r from-[#fc28a8] to-[#03edf9] hover:from-blue-600 hover:to-green-600 dark:text-slate-300"
+          className="w-8/12 text-white m-2 px-5 py-2 rounded-full bg-gradient-to-r from-blue-500 to-green-500 hover:from-blue-600 hover:to-green-600 dark:text-slate-300"
         >
           {theme === "dark" ? "Light mode" : "Dark mode"}
         </button>
